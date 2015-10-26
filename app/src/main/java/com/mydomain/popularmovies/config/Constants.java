@@ -9,7 +9,7 @@ public interface Constants {
     String POSTER_BASE_URL = "http://image.tmdb.org/t/p/";
     String POPULARITY_DESC = "popularity.desc";
     String HIGHEST_RATED_DESC = "vote_average.desc";
-    String API_KEY = "12abc2174059529eabbf444a55d2f73c";
+    String API_KEY = "";
     String POPULAR_MOVIES_URL = BASE_URL + POPULARITY_DESC + "&api_key=" + API_KEY +"&page=";
     String HIGHEST_RATED_MOVIES_URL = BASE_URL + HIGHEST_RATED_DESC + "&api_key=" + API_KEY +"&page=";
     String MOVIE_DETAILS = "movie_details";
