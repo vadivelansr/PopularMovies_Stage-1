@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         gridAdapter = new GridAdapter(this, moviesList);
         gridView = (GridView)findViewById(R.id.gridview);
         gridView.setAdapter(gridAdapter);
+        //Restore cached Movies details
         if(savedInstanceState != null && savedInstanceState.containsKey(Constants.KEY_PARCELABLE_RESULTS_LIST)){
             moviesList.clear();
             ArrayList<Movies> cachedMoviesList = savedInstanceState.getParcelableArrayList(Constants.KEY_PARCELABLE_RESULTS_LIST);
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        //Listener to listen the scroll event
         gridView.setOnScrollListener(new ScrollListener() {
             @Override
             public boolean onLoadMore(int page, int totalItemsCount) {
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Method to send request to theMovieDB API
     public void makeRequest(String url){
         if(Utilities.isNetworkAvailable(context)) {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, new String(), new com.android.volley.Response.Listener<JSONObject>() {
@@ -157,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    //Save the state in order to restore
     protected void onSaveInstanceState(Bundle state){
         state.putParcelableArrayList(Constants.KEY_PARCELABLE_RESULTS_LIST, moviesList);
         listPosition = gridView.getFirstVisiblePosition();
