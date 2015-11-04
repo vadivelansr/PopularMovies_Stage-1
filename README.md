@@ -1,4 +1,4 @@
-# PopularMovies_Stage-1
+# PopularMovies_Stage-2
 The project is as part of Udacity Android Nanodegree Program. The app presents the users with a grid arrangement of movie posters upon launch.
 
 TheMovieDB API Key:
