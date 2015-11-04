@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#00796B</color>
     <color name="colorAccent">#009688</color>
     <color name="textColorBlack">#727272</color>
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="fab_favourite">#67009688</color>
 </resources>
