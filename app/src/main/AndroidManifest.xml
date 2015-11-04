@@ -27,6 +27,10 @@
             android:parentActivityName=".activities.MainActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activities.MainActivity"></meta-data>
         </activity>
+        <provider android:authorities="com.mydomain.popularmovies.data.MoviesProvider"
+            android:name="com.mydomain.popularmovies.data.generated.MoviesProvider"
+            android:exported="false"
+            />
     </application>
 
 </manifest>

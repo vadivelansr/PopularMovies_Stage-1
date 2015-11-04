@@ -12,23 +12,20 @@ public class Movies implements Parcelable{
     private String releaseDate;
     private String posterPath;
     private double voteAverage;
+    private String backdropPath;
+    private String movieID;
 
-    public Movies(){
+     public Movies(){
+    }
 
-    }
-    public Movies(String originalTitle,String overview,String releaseDate, String posterPath, double voteAverage){
-        this.originalTitle = originalTitle;
-        this.overview = overview;
-        this.releaseDate = releaseDate;
-        this.posterPath = posterPath;
-        this.voteAverage = voteAverage;
-    }
     public Movies(Parcel in){
         this.originalTitle = in.readString();
         this.overview = in.readString();
         this.releaseDate = in.readString();
         this.posterPath = in.readString();
         this.voteAverage = in.readDouble();
+        this.backdropPath = in.readString();
+        this.movieID = in.readString();
     }
 
     public void writeToParcel(Parcel dest, int flags){
@@ -37,6 +34,8 @@ public class Movies implements Parcelable{
         dest.writeString(releaseDate);
         dest.writeString(posterPath);
         dest.writeDouble(voteAverage);
+        dest.writeString(backdropPath);
+        dest.writeString(movieID);
     }
     public int describeContents(){
         return 0;
@@ -89,6 +88,21 @@ public class Movies implements Parcelable{
         this.originalTitle = originalTitle;
     }
 
+    public String getBackdropPath() {
+        return backdropPath;
+    }
+
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
+    }
+
+    public String getMovieID() {
+        return movieID;
+    }
+
+    public void setMovieID(String movieID) {
+        this.movieID = movieID;
+    }
 
 
 }

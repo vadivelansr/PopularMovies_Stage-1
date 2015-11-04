@@ -5,5 +5,17 @@
     <string name="label_rating">Rating</string>
     <string name="most_popular">Most Popular</string>
     <string name="high_rating">High Rating</string>
+    <string name="favourites">Favourites</string>
     <string name="text_network_status">No Internet Connection</string>
+    <string name="lable_overview">Overview</string>
+    <string name="lable_trailers">Trailers</string>
+    <string name="lable_reviews">Reviews</string>
+    <string name="snackbar_remove_favourites">Removed from Favourites</string>
+    <string name="snackbar_add_favourites">Added to Favourites</string>
+    <string name="error_no_trailers_available">No Trailers Available</string>
+    <string name="error_no_reviews_available">No Reviews Available</string>
+    <string name="action_share_trailer">Share</string>
+    <string name="text_movie">Movie</string>
+    <string name="text_trailer">Trailer Link</string>
+    <string name="send_to">Send to</string>
 </resources>

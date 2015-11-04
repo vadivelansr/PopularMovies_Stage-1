@@ -10,8 +10,45 @@ import android.net.NetworkInfo;
 public class Utilities {
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivityManager
-                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                    = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        return ((activeNetworkInfo != null) && activeNetworkInfo.isConnectedOrConnecting());
+    }
+
+
+    public static boolean checkNetworkState(Context paramContext)
+    {
+        try
+        {
+            ConnectivityManager connectivityManager = (ConnectivityManager) paramContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo localNetworkInfo = connectivityManager.getActiveNetworkInfo();
+            if ((localNetworkInfo != null) && (localNetworkInfo.isConnectedOrConnecting())) {
+                return true;
+            }
+            NetworkInfo[] networkInfo = connectivityManager.getAllNetworkInfo();
+            int j = networkInfo.length;
+            int i = 0;
+            while (i < j)
+            {
+                localNetworkInfo = networkInfo[i];
+                if ((localNetworkInfo.getType() == 1) && (localNetworkInfo.isConnected())) {
+                    return true;
+                }
+                if (localNetworkInfo.getType() == 0)
+                {
+                    boolean bool = localNetworkInfo.isConnected();
+                    if (bool) {
+                        return true;
+                    }
+                }
+                i += 1;
+            }
+
+        }
+        catch (Exception e)
+        {
+
+        }
+        return false;
     }
 }
