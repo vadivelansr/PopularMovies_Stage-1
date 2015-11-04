@@ -4,7 +4,7 @@ package com.mydomain.popularmovies.config;
  * Created by vadivelansr on 10/19/2015.
  */
 public interface Constants {
-    String API_KEY = "12abc2174059529eabbf444a55d2f73c";
+    String API_KEY = "";
     String YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v=";
     String BASE_URL = "http://api.themoviedb.org/3/discover/movie?sort_by=";
     String POSTER_BASE_URL = "http://image.tmdb.org/t/p/";
